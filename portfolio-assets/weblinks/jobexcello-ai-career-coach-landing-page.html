@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JobExcello Career Coach — Know your next career move</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fff;--bg2:#F7F8FA;--tx:#111827;--mu:#667085;--bd:#E5E7EB;--ac:#4F46E5;--ac2:#7C73F5;--acs:#EEF0FF;--ok:#12805C;--oks:#E7F6EF;--wn:#B45309;--wns:#FEF3E2;--sh:0 1px 2px rgba(16,24,40,.05),0 14px 36px rgba(16,24,40,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font:inherit;color:inherit}a{color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.w{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{letter-spacing:-.03em;line-height:1.08;font-weight:700}
+h1{font-size:clamp(2.6rem,5.6vw,4.3rem)}h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}h3{font-size:1.1rem;letter-spacing:-.01em;line-height:1.3}
+.mu{color:var(--mu)}.eb{font-size:.78rem;font-weight:600;letter-spacing:.12em;color:var(--ac);margin-bottom:16px}
+.sec{padding:96px 0}.hd{max-width:620px;margin-bottom:44px}.hd p{margin-top:14px;color:var(--mu);font-size:1.08rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--bd);background:var(--bg);border-radius:12px;padding:11px 18px;font-weight:600;font-size:.95rem;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--sh)}.btn:active{transform:none}
+.btn.p{background:var(--ac);border-color:var(--ac);color:#fff;box-shadow:0 6px 18px rgba(79,70,229,.28)}.btn.p:hover{filter:brightness(1.08)}.btn.p span{transition:transform .2s}.btn.p:hover span{transform:translateX(3px)}
+.btn.lg{padding:15px 26px;font-size:1rem;border-radius:14px}
+.card{background:var(--bg);border:1px solid var(--bd);border-radius:20px;box-shadow:var(--sh)}
+.bd{display:inline-block;font-size:.74rem;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--acs);color:var(--ac);white-space:nowrap}
+.bd.g{background:var(--bg2);color:var(--mu);border:1px solid var(--bd)}.bd.ok{background:var(--oks);color:var(--ok)}.bd.wn{background:var(--wns);color:var(--wn)}
+.bar{height:6px;border-radius:9px;background:var(--bd);overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));border-radius:9px;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}.bar i.w2{background:var(--wn)}.bar i.g2{background:var(--ok)}
+/* nav */
+nav{position:sticky;top:0;z-index:30;padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid transparent;transition:.2s}
+nav.sc{background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--bd)}
+.nv{display:flex;align-items:center;height:68px;gap:32px}
+.logo{font-weight:700;font-size:1.2rem;letter-spacing:-.03em;text-decoration:none;display:flex;align-items:center;gap:9px}
+.logo b{width:26px;height:26px;border-radius:8px;background:var(--ac);color:#fff;display:grid;place-items:center;font-size:.85rem}
+.nl{display:flex;gap:28px;margin-left:auto}.nl a{color:var(--mu);text-decoration:none;font-size:.93rem;font-weight:500;transition:color .15s}.nl a:hover{color:var(--tx)}
+.nr{display:flex;align-items:center;gap:16px}.nr .si{color:var(--mu);text-decoration:none;font-weight:500;font-size:.93rem}
+/* hero */
+.hero{position:relative;padding:56px 0 96px}
+.hero:before{content:"";position:absolute;right:-8%;top:-60px;width:760px;height:760px;background:radial-gradient(closest-side,rgba(79,70,229,.13),transparent);pointer-events:none}
+.hg{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.lead{margin:22px 0 30px;font-size:1.15rem;color:var(--mu);max-width:490px}
+.sub{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:.92rem;color:var(--mu);text-decoration:none;font-weight:500}.sub:hover{color:var(--ac)}.sub b{color:var(--ac);transition:transform .2s}.sub:hover b{transform:translateX(3px) rotate(15deg)}
+.cp{padding:22px;position:relative}
+.cph{display:flex;align-items:center;gap:12px;margin-bottom:20px}.cph div:nth-child(2){flex:1}.cph b{display:block;font-size:.95rem}.cph small{color:var(--mu);font-size:.78rem}
+.av{width:36px;height:36px;border-radius:50%;background:var(--acs);color:var(--ac);display:grid;place-items:center;font-size:.72rem;font-weight:700;flex:none}
+.ai{font-size:.74rem;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--ac),var(--ac2));padding:5px 11px;border-radius:99px;white-space:nowrap;box-shadow:0 4px 12px rgba(79,70,229,.3)}.ai:before{content:"✦ ";animation:tw 2.4s ease-in-out infinite;display:inline-block}
+@keyframes tw{50%{transform:scale(1.3) rotate(20deg);opacity:.7}}
+.tl{position:relative;display:grid;gap:14px;padding-left:34px}
+.ln{position:absolute;left:11px;top:18px;bottom:30px;width:2px;background:linear-gradient(var(--ac),var(--ac2));border-radius:2px;transform-origin:top;animation:gr 2.2s .3s cubic-bezier(.4,0,.2,1) both;box-shadow:0 0 10px rgba(79,70,229,.35)}
+@keyframes gr{from{transform:scaleY(0)}}
+.nd{position:relative;opacity:0;animation:up .7s var(--d) both}@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1}}
+.nd:before{content:"";position:absolute;left:-30px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--ac);box-shadow:0 0 0 4px var(--acs)}
+.nc{border:1px solid var(--bd);border-radius:16px;padding:14px 16px;background:var(--bg);transition:transform .25s,box-shadow .25s,border-color .25s}.nc:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:#C7C9F7}
+.nc small{font-size:.68rem;font-weight:600;letter-spacing:.12em;color:var(--mu)}.nc h3{font-size:1.25rem;margin:2px 0 10px}
+.mt{display:flex;justify-content:space-between;font-size:.8rem;color:var(--mu);margin-bottom:6px}.mt b{color:var(--tx)}
+.nc.t{border-color:#C7C9F7;background:linear-gradient(180deg,var(--acs),var(--bg) 70%)}
+.tr{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.sp{width:110px;height:34px;flex:none}.sp path{stroke:var(--ac);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-dasharray:200;stroke-dashoffset:200;animation:dr 1.8s 1.6s forwards}@keyframes dr{to{stroke-dashoffset:0}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{font-size:.82rem;font-weight:500;padding:6px 12px;border-radius:99px;border:1px solid var(--bd);background:var(--bg);animation:fl 4s ease-in-out infinite alternate}
+.chips span:nth-child(2){animation-delay:-1s}.chips span:nth-child(3){animation-delay:-2s}.chips span:nth-child(4){animation-delay:-3s}
+.chips span:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ac);margin-right:7px}
+@keyframes fl{to{transform:translateY(-4px)}}
+.pg{display:flex;align-items:flex-end;gap:5px;height:34px;margin-top:12px;justify-content:space-between}.pg i{flex:1;border-radius:4px 4px 0 0;background:var(--acs);height:var(--h);transform-origin:bottom;animation:bg2 .8s calc(2s + var(--i)*.12s) both}.pg i:last-child{background:var(--ac)}@keyframes bg2{from{transform:scaleY(0)}}
+.cpf{display:flex;justify-content:space-between;font-size:.76rem;color:var(--mu);margin-top:16px}
+/* discover */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fc{padding:26px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,box-shadow .25s}.fc:hover{transform:translateY(-5px);box-shadow:0 2px 4px rgba(16,24,40,.05),0 22px 44px rgba(16,24,40,.1)}
+.ic{width:44px;height:44px;border-radius:13px;background:var(--acs);color:var(--ac);display:grid;place-items:center}
+.fc p{color:var(--mu);font-size:.96rem}
+.mini{margin-top:auto;border:1px solid var(--bd);border-radius:14px;background:var(--bg2);padding:14px;display:grid;gap:9px;font-size:.86rem}
+.mr{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.role{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--bd)}.role.h{border-color:var(--ac);background:var(--acs);font-weight:600}
+.sg{display:grid;gap:5px}.sg div{display:flex;justify-content:space-between;align-items:center}
+.rm{position:relative;display:grid;gap:10px;padding-left:30px}.rm:before{content:"";position:absolute;left:10px;top:12px;bottom:12px;width:2px;background:var(--bd)}
+.rm div{position:relative;background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:8px 12px}.rm div:before{content:attr(data-n);position:absolute;left:-30px;top:6px;width:22px;height:22px;border-radius:50%;background:var(--bg);border:2px solid var(--ac);color:var(--ac);font-size:.68rem;font-weight:700;display:grid;place-items:center}
+.rm div:first-child:before{background:var(--ac);color:#fff}
+/* dashboard */
+.alt{background:var(--bg);border-block:1px solid var(--bd)}
+.dash{overflow:hidden;box-shadow:0 2px 4px rgba(16,24,40,.05),0 30px 70px rgba(16,24,40,.1)}
+.dh{display:flex;align-items:center;gap:14px;padding:16px 22px;border-bottom:1px solid var(--bd);background:var(--bg2);flex-wrap:wrap}
+.dh .tt{flex:1;min-width:200px}.dh small{color:var(--mu);font-size:.78rem}.dh b{display:block;font-size:1.02rem}
+.db{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;padding:22px}
+.pn{border:1px solid var(--bd);border-radius:16px;padding:18px;background:var(--bg)}.pn+.pn{margin-top:22px}
+.pn h4{font-size:.95rem;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+.sk{display:grid;grid-template-columns:1fr 1fr;gap:12px}.sk>div{border:1px solid var(--bd);border-radius:12px;padding:12px 14px;transition:transform .2s,box-shadow .2s}.sk>div:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.sk .mt{margin-bottom:8px;font-size:.9rem;color:var(--tx);font-weight:500}.sk .mt b{color:var(--ac)}
+.lk{position:relative}.lkc{display:grid;gap:14px;filter:blur(0);transition:filter 1.4s .3s}.rv.in .lkc{filter:blur(5px)}
+.lko{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;gap:4px;background:rgba(255,255,255,.35);border-radius:12px}
+.lko .lock{width:38px;height:38px;border-radius:12px;background:var(--bg);border:1px solid var(--bd);box-shadow:var(--sh);display:grid;place-items:center;margin-bottom:6px}.lko b{font-size:.95rem}.lko span{font-size:.84rem;color:var(--mu)}
+.gp{font-size:.88rem}.gp .mt{color:var(--tx);font-weight:500}
+.st{list-style:none;display:grid;gap:12px;padding:0}.st li{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid var(--bd);border-radius:12px;font-size:.9rem;transition:border-color .2s}.st li:hover{border-color:#C7C9F7}
+.st li b{font-size:.78rem;color:var(--ac);background:var(--acs);border-radius:8px;padding:3px 7px;flex:none}.st li small{display:block;color:var(--ac);font-weight:600;font-size:.7rem;margin-top:3px}
+.cb{margin-top:22px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:linear-gradient(135deg,var(--acs),var(--bg))}.cb h3{font-size:1.25rem}.cb p{color:var(--mu)}
+/* chat */
+.ch{max-width:780px;margin:0 auto;overflow:hidden}
+.chh{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--bd)}.chh b{font-size:.95rem}.chh small{display:block;color:var(--mu);font-size:.76rem}
+.cm{padding:22px 20px;display:grid;gap:16px;background:var(--bg2);min-height:120px}
+.msg{opacity:0;transform:translateY(10px);transition:.5s;display:none}.msg.show{display:flex;opacity:1;transform:none}
+.msg.u{justify-content:flex-end}.msg.u p{background:var(--ac);color:#fff;padding:12px 16px;border-radius:16px 16px 4px 16px;max-width:80%;font-size:.95rem}
+.msg.c{gap:12px}.msg.c>div{background:var(--bg);border:1px solid var(--bd);border-radius:16px 16px 16px 4px;padding:16px 18px;font-size:.93rem;max-width:calc(100% - 48px)}
+.msg.c ol{padding-left:0;list-style:none;display:grid;gap:10px;margin:10px 0 14px}.msg.c li b{display:block}.msg.c li span{color:var(--mu)}
+.ty{display:flex;gap:4px;padding:14px 16px;background:var(--bg);border:1px solid var(--bd);border-radius:16px;width:max-content}.ty i{width:7px;height:7px;border-radius:50%;background:var(--mu);animation:tp 1s infinite}.ty i:nth-child(2){animation-delay:.15s}.ty i:nth-child(3){animation-delay:.3s}@keyframes tp{50%{transform:translateY(-4px);opacity:.4}}
+.in2{display:flex;align-items:center;gap:10px;padding:14px 20px;border-top:1px solid var(--bd)}.in2 div{flex:1;border:1px solid var(--bd);border-radius:12px;padding:11px 14px;color:var(--mu);font-size:.93rem;background:var(--bg)}.in2 .sd{width:42px;height:42px;border-radius:12px;background:var(--ac);color:#fff;display:grid;place-items:center;border:0}
+.sparkle{color:var(--ac)}
+/* cta */
+.cta{position:relative;text-align:center;padding:120px 0;overflow:hidden}.cta:before{content:"";position:absolute;left:50%;top:60%;width:720px;height:420px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(79,70,229,.16),transparent);pointer-events:none}
+.cta .w{position:relative}.cta h2{max-width:720px;margin:0 auto 16px}.cta p{color:var(--mu);font-size:1.1rem;margin:0 auto 30px;max-width:520px}
+/* footer */
+footer{border-top:1px solid var(--bd);padding:56px 0 28px;font-size:.9rem}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px}.fg p{color:var(--mu);margin:14px 0 18px;max-width:300px}
+.fg h5{font-size:.82rem;margin-bottom:12px}.fg a{display:block;color:var(--mu);text-decoration:none;margin-bottom:8px}.fg a:hover{color:var(--ac)}
+.so{display:flex;gap:10px}.so a{width:34px;height:34px;border-radius:10px;border:1px solid var(--bd);display:grid;place-items:center;font-size:.76rem;font-weight:600;margin:0}
+.cr{border-top:1px solid var(--bd);padding-top:20px;color:var(--mu);font-size:.84rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){.hg,.db{grid-template-columns:1fr}.g3{grid-template-columns:1fr;max-width:560px}.nl{display:none}.nv{gap:0}.nr{margin-left:auto}.sec{padding:72px 0}.fg{grid-template-columns:1fr 1fr}.hero:before{right:-40%}}
+@media(max-width:640px){.sk{grid-template-columns:1fr}.btn.lg,.cb .btn{width:100%}.nr .si{display:none}.cp{padding:16px}.tr{flex-direction:column}.hero{padding-top:32px}.cb{padding:20px}.fg{grid-template-columns:1fr}.msg.u p{max-width:92%}.db{padding:14px}}
+@media(prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.rv,.nd{opacity:1;transform:none}.sp path{stroke-dashoffset:0}.msg{display:flex;opacity:1}.ty{display:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="w nv">
+<a class="logo" href="#top"><b>J</b>JobExcello</a>
+<div class="nl"><a href="#discover">Career Coach</a><a href="#path">Jobs</a><a href="#ask">Resume</a><a href="#footer">About</a></div>
+<div class="nr"><a class="si" href="#cta">Sign In</a><a class="btn p" href="#cta">Get Started <span>→</span></a></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="w hg">
+<div>
+<div class="eb">AI CAREER COACH</div>
+<h1>Know your next career move.</h1>
+<p class="lead">JobExcello Career Coach helps you discover suitable roles, identify the skills you need to build, and understand exactly what to focus on next.</p>
+<a class="btn p lg" href="#path">Explore My Career Path <span>→</span></a><br>
+<a class="sub" href="#discover">Not sure what role to target? <b>✦</b></a>
+</div>
+<div class="card cp rv" aria-label="Career path preview">
+<div class="cph"><div class="av">You</div><div><b>Your Career Path</b><small>Career Coach preview</small></div><span class="ai">AI Recommended</span></div>
+<div class="tl"><i class="ln"></i>
+<div class="nd" style="--d:.5s"><div class="nc"><small>CURRENT ROLE</small><h3>Data Analyst</h3><div class="mt"><span>Current skills match</span><b data-count="72" data-suf="%">0%</b></div><div class="bar"><i data-w="72"></i></div></div></div>
+<div class="nd" style="--d:1.2s"><div class="nc t"><div class="tr"><div><small>TARGET ROLE</small><h3 style="margin-bottom:6px">Senior Data Analyst</h3><span class="bd ok">AI Match <span data-count="92" data-suf="%">0%</span></span></div>
+<svg class="sp" viewBox="0 0 120 34" aria-hidden="true"><path d="M2 28 L22 24 L42 26 L62 15 L82 17 L102 7 L118 4"/></svg></div></div></div>
+<div class="nd" style="--d:1.9s"><div class="nc"><small>SKILLS TO BUILD</small><div class="chips" style="margin-top:10px"><span>SQL</span><span>Power BI</span><span>Python</span><span>Data Visualization</span></div></div></div>
+</div>
+<div class="cpf"><span>Estimated skill progression</span><span>Readiness <b data-count="68" data-suf="%" style="color:var(--tx)">0%</b></span></div>
+<div class="pg" aria-hidden="true"><i style="--h:30%;--i:0"></i><i style="--h:42%;--i:1"></i><i style="--h:55%;--i:2"></i><i style="--h:70%;--i:3"></i><i style="--h:100%;--i:4"></i></div>
+</div>
+</div></header>
+
+<section class="sec" id="discover"><div class="w">
+<div class="hd rv"><h2>What You Can Discover</h2><p>Turn career uncertainty into a clear plan with AI-powered guidance.</p></div>
+<div class="g3">
+<div class="card fc rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div><h3>Find Your Next Role</h3><p>Discover roles that could fit your career direction.</p>
+<div class="mini"><div class="mr"><span class="bd g">Current Experience</span><span class="mu">→</span><small class="mu">Suggested Roles</small></div>
+<div class="role h">Data Analyst <span class="bd ok">AI Match 94%</span></div><div class="role">Business Analyst</div><div class="role">Product Analyst</div></div></div>
+<div class="card fc rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Discover Skills to Build</h3><p>Identify the skills you need to build for your target role.</p>
+<div class="mini"><b style="font-size:.8rem">Skill Gap Analysis</b>
+<div class="sg"><div><span>SQL</span><span class="bd ok">Strong</span></div><div class="bar"><i class="g2" data-w="88"></i></div></div>
+<div class="sg"><div><span>Power BI</span><span class="bd">Intermediate</span></div><div class="bar"><i data-w="64"></i></div></div>
+<div class="sg"><div><span>Python</span><span class="bd wn">Needs Work</span></div><div class="bar"><i class="w2" data-w="34"></i></div></div>
+<div class="sg"><div><span>Data Visualization</span><span class="bd ok">Strong</span></div><div class="bar"><i class="g2" data-w="82"></i></div></div></div></div>
+<div class="card fc rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h6.5"/></svg></div><h3>Plan Your Career Path</h3><p>Know what to focus on next.</p>
+<div class="mini"><div class="rm"><div data-n="1">Improve Python</div><div data-n="2">Complete Power BI project</div><div data-n="3">Build portfolio</div><div data-n="4">Apply for Senior Analyst roles</div></div></div></div>
+</div></div></section>
+
+<section class="sec alt" id="path"><div class="w">
+<div class="hd rv"><h2>Your Personalized Career Path</h2><p>See the skills, gaps, and next steps that matter most for your career.</p></div>
+<div class="card dash rv">
+<div class="dh"><div class="av">You</div><div class="tt"><small>Career Path</small><b>Data Analyst → Senior Data Analyst</b></div><span class="ai">AI-powered</span></div>
+<div class="db"><div>
+<div class="pn"><h4>Your Skills <span class="bd g">4 tracked</span></h4><div class="sk">
+<div><div class="mt"><span>SQL</span><b data-count="85" data-suf="%">0%</b></div><div class="bar"><i data-w="85"></i></div></div>
+<div><div class="mt"><span>Power BI</span><b data-count="72" data-suf="%">0%</b></div><div class="bar"><i data-w="72"></i></div></div>
+<div><div class="mt"><span>Python</span><b data-count="58" data-suf="%">0%</b></div><div class="bar"><i class="w2" data-w="58"></i></div></div>
+<div><div class="mt"><span>Data Visualization</span><b data-count="81" data-suf="%">0%</b></div><div class="bar"><i data-w="81"></i></div></div></div></div>
+<div class="pn"><h4>Skill Gaps <span class="bd wn">Personalized</span></h4><div class="lk"><div class="lkc gp">
+<div><div class="mt"><span>Python Advanced</span><b>42%</b></div><div class="bar"><i class="w2" data-w="42"></i></div></div>
+<div><div class="mt"><span>Leadership</span><b>35%</b></div><div class="bar"><i class="w2" data-w="35"></i></div></div>
+<div><div class="mt"><span>Advanced Statistics</span><b>48%</b></div><div class="bar"><i class="w2" data-w="48"></i></div></div>
+<div><div class="mt"><span>Cloud Analytics</span><b>30%</b></div><div class="bar"><i class="w2" data-w="30"></i></div></div></div>
+<div class="lko"><div class="lock">🔒</div><b>Personalized Skill Gap</b><span>Sign in to unlock your complete career analysis.</span></div></div></div>
+</div>
+<div class="pn"><h4>Recommended Next Steps</h4><ol class="st">
+<li><b>01</b><div>Complete Advanced Python project<small>✦ AI recommended</small></div></li>
+<li><b>02</b><div>Build Power BI portfolio dashboard<small>✦ AI recommended</small></div></li>
+<li><b>03</b><div>Improve statistical modeling<small>✦ AI recommended</small></div></li>
+<li><b>04</b><div>Start applying for Senior Data Analyst roles<small>✦ AI recommended</small></div></li></ol></div>
+</div></div>
+<div class="card cb rv"><div><h3>Want to see what applies to you?</h3><p>Sign in to get your personalized career path.</p></div><a class="btn p lg" href="#cta">Get My Personalized Path <span>→</span></a></div>
+</div></section>
+
+<section class="sec" id="ask"><div class="w">
+<div class="hd rv" style="text-align:center;margin-inline:auto"><h2>Ask Career Coach</h2><p>Get practical career guidance whenever you need it.</p></div>
+<div class="card ch rv" id="chat">
+<div class="chh"><div class="av sparkle">✦</div><div><b>Career Coach</b><small>AI guidance for your next move</small></div></div>
+<div class="cm">
+<div class="msg u" id="m1"><p>What skills should I build to move into Performance Marketing?</p></div>
+<div class="msg" id="m2"><div class="ty"><i></i><i></i><i></i></div></div>
+<div class="msg c" id="m3"><div class="av sparkle">✦</div><div><b>To move into Performance Marketing, focus on these skills first:</b>
+<ol><li><b>1. Google Ads &amp; Meta Ads</b><span>Learn campaign setup, targeting, bidding, and optimization.</span></li>
+<li><b>2. Analytics</b><span>Build strong skills in GA4, conversion tracking, and campaign measurement.</span></li>
+<li><b>3. Data Analysis</b><span>Learn how to interpret CTR, CPC, CPA, ROAS, and conversion data.</span></li>
+<li><b>4. Creative Testing</b><span>Understand how to test ad creatives, audiences, and messaging.</span></li></ol>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="bd">Google Ads</span><span class="bd">Meta Ads</span><span class="bd">GA4</span><span class="bd">ROAS</span><span class="bd">A/B Testing</span></div></div></div>
+</div>
+<div class="in2"><span class="sparkle">✦</span><div>Ask Career Coach anything...</div><span class="sd" aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span></div>
+</div></div></section>
+
+<section class="cta alt" id="cta" style="border-top:1px solid var(--bd)"><div class="w rv">
+<h2>Your next career move starts with knowing what to do next.</h2>
+<p>Let Career Coach turn your career goals into a clear, actionable path.</p>
+<a class="btn p lg" href="#top">Explore My Career Path <span>→</span></a>
+</div></section>
+
+<footer id="footer"><div class="w">
+<div class="fg"><div><a class="logo" href="#top" style="margin:0"><b>J</b>JobExcello</a><p>AI-powered tools to help you discover, prepare for, and land your next opportunity.</p>
+<div class="so"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">X</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="YouTube">yt</a></div></div>
+<div><h5>Product</h5><a href="#discover">Career Coach</a><a href="#path">Jobs</a><a href="#ask">Resume</a></div>
+<div><h5>Company</h5><a href="#">About</a><a href="#">Contact</a></div>
+<div><h5>Legal</h5><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+<div class="cr"><span>© 2026 JobExcello. All rights reserved.</span><span>Sample data shown for illustration.</span></div>
+</div></footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>8),{passive:true});
+function count(el){const to=+el.dataset.count,suf=el.dataset.suf||'';if(rm){el.textContent=to+suf;return}const s=performance.now(),f=t=>{const p=Math.min(1,(t-s)/1300);el.textContent=Math.round(to*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+function chat(){const m=[$('#m1'),$('#m2'),$('#m3')];m[0].classList.add('show');setTimeout(()=>m[1].classList.add('show'),rm?0:800);setTimeout(()=>{m[1].classList.remove('show');m[2].classList.add('show')},rm?0:2300)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;t.classList.add('in');io.unobserve(t);
+$$('[data-count]',t).forEach(count);
+$$('.bar i',t).forEach(i=>{i.style.width='0';requestAnimationFrame(()=>requestAnimationFrame(()=>setTimeout(()=>i.style.width=i.dataset.w+'%',t.classList.contains('cp')?900:100)))});
+if(t.id==='chat')chat()}),{threshold:.15});
+$$('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

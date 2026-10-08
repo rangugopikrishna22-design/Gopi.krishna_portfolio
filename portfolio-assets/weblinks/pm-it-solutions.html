@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PM IT Solutions LLC | IT Solutions Built to Perfection</title>
+<meta name="description" content="PM IT Solutions LLC: technology consulting, software development, cloud services, IT staffing and training.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050a17;--bg2:#0a1226;--ink:#f2f6ff;--mut:#a3b0cc;--acc:#3b9dff;--cy:#22d3ee;--line:rgba(140,180,255,.16);--glass:rgba(16,26,52,.6);
+--h:"Space Grotesk","Segoe UI",system-ui,sans-serif;--b:"Manrope","Segoe UI",system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#050a17}}
+:root[data-theme="dark"]{--bg:#050a17}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 var(--b);overflow-x:hidden;transition:background .6s}
+body.alt{background:var(--bg2)}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--h);line-height:1.05;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(2.1rem,5vw,4rem)}
+p{margin:0}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1200px,100% - 40px);margin:0 auto}
+section{position:relative;padding:clamp(72px,11vw,150px) 0}
+.sr{position:absolute;left:-999px}
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--acc),var(--cy));z-index:100}
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:90;padding-top:env(safe-area-inset-top,0px);transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.s{background:rgba(5,10,23,.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.nb{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font:700 1.15rem var(--h);display:flex;gap:10px;align-items:center}
+.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--acc),var(--cy));display:grid;place-items:center;font:700 .8rem var(--h);color:#04101f;font-style:normal}
+.links{display:flex;gap:6px;align-items:center}
+.links a.l{padding:8px 14px;border-radius:99px;color:var(--mut);font-size:.95rem;font-weight:500;transition:color .3s,background .3s}
+.links a.l:hover,.links a.l.on{color:var(--ink);background:rgba(120,170,255,.12)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:14px;font:600 1rem var(--b);border:1px solid transparent;cursor:pointer;transition:transform .25s,box-shadow .3s,background .3s;will-change:transform}
+.btn svg{width:18px;height:18px;transition:transform .3s}
+.btn:hover svg{transform:translateX(5px)}
+.p{background:linear-gradient(135deg,var(--acc),var(--cy));color:#04101f}
+.p:hover{box-shadow:0 8px 34px rgba(34,211,238,.35)}
+.g{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--ink);backdrop-filter:blur(8px)}
+.g:hover{border-color:var(--cy);background:rgba(34,211,238,.08)}
+#bg{display:none;background:none;border:1px solid var(--line);color:var(--ink);width:46px;height:46px;border-radius:12px;cursor:pointer}
+#drawer{position:fixed;inset:0;z-index:85;background:rgba(5,10,23,.97);display:flex;flex-direction:column;justify-content:center;gap:6px;padding:90px 28px;clip-path:circle(0 at calc(100% - 40px) 40px);transition:clip-path .6s cubic-bezier(.7,0,.2,1);visibility:hidden}
+#drawer.o{clip-path:circle(150% at calc(100% - 40px) 40px);visibility:visible}
+#drawer a{font:700 2rem var(--h);padding:10px 0;border-bottom:1px solid var(--line)}
+/* hero */
+#home{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding-top:110px;overflow:hidden}
+.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(60% 50% at 78% 35%,rgba(59,157,255,.22),transparent 70%),radial-gradient(40% 40% at 10% 90%,rgba(34,211,238,.1),transparent 70%);opacity:0;animation:fi 1.4s .1s forwards}
+.grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(70% 60% at 60% 40%,#000,transparent);-webkit-mask-image:radial-gradient(70% 60% at 60% 40%,#000,transparent);opacity:.5}
+h1{font-size:clamp(2.7rem,7.2vw,6rem)}
+.ln{display:block;overflow:hidden;padding-bottom:.08em}
+.ln>span{display:block;transform:translateY(110%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+.ln:nth-child(2)>span{animation-delay:.15s}.ln:nth-child(3)>span{animation-delay:.3s}
+.hero-p{max-width:52ch;color:var(--mut);margin:28px 0 36px;font-size:1.15rem;opacity:0;animation:fu .9s .7s forwards}
+.cta{display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:fu .9s .9s forwards}
+.vis{position:relative;aspect-ratio:1;width:100%;max-width:560px;justify-self:center;opacity:0;transform:scale(.95);animation:sc 1.2s .5s cubic-bezier(.2,.8,.2,1) forwards}
+.vis canvas{position:absolute;inset:0;width:100%;height:100%}
+.ring{position:absolute;inset:14%;border-radius:50%;border:1px solid var(--line);animation:spin 40s linear infinite}
+.ring::after{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--cy);box-shadow:0 0 18px var(--cy)}
+.ring.r2{inset:28%;animation-duration:26s;animation-direction:reverse;border-style:dashed}
+.core{position:absolute;inset:38%;border-radius:28%;background:linear-gradient(135deg,rgba(59,157,255,.9),rgba(34,211,238,.6));box-shadow:0 0 80px rgba(59,157,255,.5);transform:rotate(45deg);animation:fl 7s ease-in-out infinite}
+.fc{position:absolute;padding:12px 16px;border-radius:16px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font:600 .85rem var(--h);display:flex;gap:10px;align-items:center;animation:fl 6s ease-in-out infinite}
+.fc svg{width:20px;height:20px;stroke:var(--cy)}
+.fc:nth-of-type(1){top:8%;left:2%}.fc:nth-of-type(2){top:22%;right:0;animation-delay:-2s}.fc:nth-of-type(3){bottom:14%;left:6%;animation-delay:-4s}.fc:nth-of-type(4){bottom:6%;right:8%;animation-delay:-1s}
+svg{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+@keyframes up{to{transform:none}}@keyframes fu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}@keyframes fi{to{opacity:1}}@keyframes sc{to{opacity:1;transform:none}}
+@keyframes fl{50%{transform:translateY(-14px)}}.core{--r:45deg}@keyframes spin{to{transform:rotate(360deg)}}
+.core{animation-name:cf}@keyframes cf{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(-14px)}}
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em}
+.w>span{display:inline-block;transform:translateY(110%);transition:transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*60ms)}
+.in .w>span{transform:none}
+/* intro */
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.big{font:700 clamp(8rem,22vw,20rem)/.8 var(--h);color:transparent;-webkit-text-stroke:1px rgba(120,170,255,.35);position:absolute;right:-2vw;top:8%;pointer-events:none;will-change:transform}
+.ig p{color:var(--mut);font-size:1.2rem;max-width:56ch}
+.ig p+p{margin-top:18px}
+/* tech */
+.hs{position:relative}
+.pin{overflow:hidden}
+.th{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:44px}
+.th p{color:var(--mut);max-width:34ch}
+.track{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tc{position:relative;border-radius:22px;padding:28px;background:linear-gradient(160deg,rgba(24,38,74,.7),rgba(10,18,38,.7));border:1px solid var(--line);overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+.tc.lg{grid-column:span 2}
+.tc::before{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--mx,50%) var(--my,0%),rgba(34,211,238,.18),transparent 60%);opacity:0;transition:opacity .3s}
+.tc:hover,.tc:focus-visible{transform:translateY(-8px);border-color:rgba(34,211,238,.7);box-shadow:0 0 0 1px rgba(34,211,238,.25),0 24px 60px rgba(0,0,0,.4)}
+.tc:hover::before{opacity:1}
+.ic{width:46px;height:46px;border-radius:14px;background:rgba(59,157,255,.14);display:grid;place-items:center;color:var(--cy);transition:transform .4s}
+.ic svg{width:24px;height:24px}
+.tc:hover .ic{transform:rotate(-8deg) scale(1.08)}
+.tc h3{font-size:1.4rem;margin:22px 0 6px}
+.tc p{color:var(--mut);font-size:.95rem;line-height:1.55}
+.tc .x{max-height:0;opacity:0;overflow:hidden;color:var(--cy);font-size:.88rem;transition:max-height .4s,opacity .4s,margin .4s}
+.tc:hover .x,.tc:focus-visible .x{max-height:80px;opacity:1;margin-top:10px}
+/* services */
+.sh{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:56px}
+.sh p{color:var(--mut);max-width:36ch;font-size:1.15rem}
+.sv{display:flex;flex-direction:column}
+.sc{position:relative;display:grid;grid-template-columns:110px 1fr 1.2fr 60px;gap:28px;align-items:center;padding:34px 30px;border-radius:24px;border:1px solid transparent;border-top-color:var(--line);transition:padding .4s,background .4s,border-color .4s,transform .4s;overflow:hidden}
+.sc::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(59,157,255,.22),rgba(34,211,238,.06) 60%,transparent);opacity:0;transition:opacity .4s;z-index:-1}
+.sc::after{content:"";position:absolute;left:30px;bottom:0;height:2px;width:0;background:linear-gradient(90deg,var(--acc),var(--cy));transition:width .6s}
+.sc:hover,.sc:focus-visible{padding-top:44px;padding-bottom:44px;border-color:var(--line)}
+.sc:hover::before{opacity:1}.sc:hover::after{width:calc(100% - 60px)}
+.sn{font:700 3.6rem/1 var(--h);color:transparent;-webkit-text-stroke:1px rgba(150,190,255,.5);transition:color .4s}
+.sc:hover .sn{color:var(--cy);-webkit-text-stroke-color:var(--cy)}
+.sc h3{font-size:1.8rem;display:flex;align-items:center;gap:14px}
+.sc h3 svg{width:26px;height:26px;color:var(--cy);flex:none}
+.sc p{color:var(--mut);transition:color .3s}.sc:hover p{color:var(--ink)}
+.ar{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .35s,background .35s}
+.ar svg{width:20px;height:20px}.sc:hover .ar{transform:translateX(6px);background:var(--acc);color:#04101f}
+/* why */
+.pl{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:auto auto;gap:18px;margin-top:56px}
+.pn{position:relative;border-radius:28px;padding:38px;background:var(--glass);border:1px solid var(--line);overflow:hidden;transition:transform .4s,border-color .4s}
+.pn:first-child{grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;min-height:420px;background:linear-gradient(160deg,rgba(59,157,255,.25),rgba(10,18,38,.8))}
+.pn:hover{transform:translateY(-6px);border-color:rgba(34,211,238,.6)}
+.pn h3{font-size:1.1rem;color:var(--cy);margin-bottom:14px;letter-spacing:0}
+.pn p{color:#d3ddf2}.pn:first-child p{font:500 clamp(1.2rem,2vw,1.6rem)/1.5 var(--h)}
+.lead{color:var(--mut);max-width:60ch;margin-top:22px;font-size:1.2rem}
+/* process */
+#process{background:linear-gradient(var(--bg),var(--bg2))}
+.st{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:70px}
+.ln0,.lf{position:absolute;top:27px;left:27px;height:2px;right:calc(25% - 27px)}
+.ln0{background:var(--line)}
+.lf{background:linear-gradient(90deg,var(--acc),var(--cy));transform-origin:0 50%;transform:scaleX(0);box-shadow:0 0 12px var(--cy)}
+.sp{position:relative;padding-top:0;opacity:.45;transition:opacity .5s}
+.sp.on{opacity:1}
+.dot{width:56px;height:56px;border-radius:50%;background:var(--bg);border:1px solid var(--line);display:grid;place-items:center;color:var(--mut);position:relative;z-index:1;transition:all .5s}
+.dot svg{width:24px;height:24px}
+.sp.on .dot{border-color:var(--cy);color:var(--cy);box-shadow:0 0 0 6px rgba(34,211,238,.12);transform:scale(1.08)}
+.sp.on .dot svg{animation:pop .6s}
+@keyframes pop{40%{transform:scale(1.3) rotate(-8deg)}}
+.sp small{display:block;margin:24px 0 6px;font:700 .95rem var(--h);color:var(--cy)}
+.sp h3{font-size:1.7rem;margin-bottom:10px}.sp p{color:var(--mut);font-size:.98rem}
+/* stats */
+#stats{background:radial-gradient(60% 80% at 50% 0%,rgba(59,157,255,.18),transparent 70%)}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.sg b{display:block;font:700 clamp(4rem,12vw,9rem)/1 var(--h);background:linear-gradient(180deg,#fff,#7fb6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sg span{color:var(--mut);font-size:1.1rem}
+/* cta */
+#cta{overflow:hidden;text-align:center;background:linear-gradient(120deg,#0a2a6b,#0b5a86,#0a2a6b);background-size:250% 250%;animation:gm 14s ease-in-out infinite}
+@keyframes gm{50%{background-position:100% 50%}}
+#cta::before{content:"";position:absolute;inset:-20% 30%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.14),transparent);transform:skewX(-20deg);animation:bm 9s ease-in-out infinite}
+@keyframes bm{50%{transform:translateX(60%) skewX(-20deg)}}
+#cta .grid{animation:gd 20s linear infinite;mask-image:none;-webkit-mask-image:none;opacity:.25}
+@keyframes gd{to{background-position:64px 64px}}
+#cta .wrap{position:relative}
+#cta h2{font-size:clamp(2.4rem,6.5vw,5.4rem);max-width:15ch;margin:0 auto 22px}
+#cta p{margin-bottom:34px;font-size:1.2rem}
+#cta .p{background:#fff;color:#062040}
+/* contact */
+.cg{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}
+.ci{display:grid;gap:26px;margin-top:38px}
+.ci h3{font-size:.95rem;color:var(--cy);margin-bottom:6px;letter-spacing:0}
+.ci a:hover{color:var(--cy)}
+form{background:var(--glass);border:1px solid var(--line);border-radius:28px;padding:clamp(22px,4vw,42px);display:grid;gap:20px}
+.f{position:relative}
+.f input,.f textarea{width:100%;padding:24px 16px 10px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;color:var(--ink);font:inherit;transition:border-color .3s,box-shadow .3s;resize:vertical}
+.f textarea{min-height:130px}
+.f label{position:absolute;left:16px;top:16px;color:var(--mut);pointer-events:none;transition:all .25s;transform-origin:0 0}
+.f input:focus,.f textarea:focus{outline:none;border-color:var(--cy);box-shadow:0 0 0 4px rgba(34,211,238,.14)}
+.f input:focus+label,.f textarea:focus+label,.f input:not(:placeholder-shown)+label,.f textarea:not(:placeholder-shown)+label{transform:translateY(-11px) scale(.78);color:var(--cy)}
+#ok{min-height:1.4em;color:var(--cy)}
+/* footer */
+footer{border-top:1px solid var(--line);padding:64px 0 34px;background:#030710}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
+footer h4{margin:0 0 14px;font:700 1rem var(--h)}
+footer p,footer li,footer a{color:var(--mut);font-size:.95rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a:hover{color:var(--cy)}
+.cp{margin-top:44px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+/* cursor */
+#cur{position:fixed;left:0;top:0;width:36px;height:36px;margin:-18px 0 0 -18px;border:1.5px solid var(--cy);border-radius:50%;pointer-events:none;z-index:200;opacity:0;transition:width .25s,height .25s,margin .25s,background .25s,opacity .3s}
+#cur.h{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(34,211,238,.1)}
+/* responsive */
+@media (max-width:1023px){.hg,.ig,.cg{grid-template-columns:1fr}.track{grid-template-columns:repeat(2,1fr)}.sc{grid-template-columns:70px 1fr 50px}.sc p{grid-column:2/3;grid-row:2}.sn{font-size:2.6rem;grid-row:1/3}.ar{grid-row:1/3;grid-column:3}.fg{grid-template-columns:1fr 1fr}.pl{grid-template-columns:1fr}.pn:first-child{grid-row:auto;min-height:0;gap:30px}.vis{max-width:440px}}
+@media (max-width:860px){.links{display:none}#bg{display:grid;place-items:center}.nb .btn{display:none}}
+@media (max-width:767px){body{font-size:1rem}.track{grid-template-columns:1fr}.tc.lg{grid-column:auto}.tc{min-height:0}.tc .x{max-height:80px;opacity:1;margin-top:10px}
+.st{grid-template-columns:1fr;gap:34px;margin-top:44px;padding-left:0}.ln0,.lf{top:27px;left:27px;width:2px;height:calc(100% - 60px);right:auto}.lf{transform-origin:50% 0;transform:scaleY(0)}
+.sp{display:grid;grid-template-columns:56px 1fr;column-gap:20px;opacity:.55}.sp small{margin:0 0 4px}.sp div{grid-column:2}.sp .dot{grid-row:1/4}
+.sg{grid-template-columns:1fr;gap:34px}.fg{grid-template-columns:1fr}.sc{padding:26px 6px}.sc:hover{padding:26px 6px}.sc h3{font-size:1.4rem}.th{flex-direction:column;align-items:start}.fc{font-size:.75rem;padding:8px 12px}.btn{width:100%;justify-content:center}.cta{flex-direction:column}}
+@media (hover:none),(pointer:coarse){#cur{display:none}}
+@media (min-width:1024px) and (prefers-reduced-motion:no-preference){.hs .track{display:flex;width:max-content;gap:18px;will-change:transform}.hs .tc{width:340px;flex:none}.hs .tc.lg{width:480px}.hs{height:var(--hh,300vh)}.pin{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:72px}.hs .wrap.tk{width:100%;margin:0;padding-left:max(20px,calc((100vw - 1200px)/2))}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv,.ln>span,.w>span,.hero-p,.cta,.vis,.hero-bg{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<div id="prog" aria-hidden="true"></div><div id="cur" aria-hidden="true"></div>
+<a class="sr" href="#main">Skip to content</a>
+<nav id="nav"><div class="wrap nb">
+<a class="logo" href="#home" aria-label="PM IT Solutions home"><i>PM</i>PM IT Solutions</a>
+<div class="links"><a class="l on" href="#home">Home</a><a class="l" href="#tech">Technologies</a><a class="l" href="#about">About</a><a class="l" href="#services">Services</a><a class="l" href="#why">Why Us</a><a class="l" href="#contact">Contact</a></div>
+<a class="btn p mg" href="#contact">Let’s Work Together</a>
+<button id="bg" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
+</div></nav>
+<div id="drawer" aria-hidden="true"><a href="#home">Home</a><a href="#tech">Technologies</a><a href="#about">About</a><a href="#services">Services</a><a href="#why">Why Us</a><a href="#contact">Contact</a></div>
+
+<main id="main">
+<section id="home" data-bg="0"><div class="hero-bg"></div><div class="grid" data-px=".05"></div>
+<div class="wrap hg"><div>
+<h1><span class="ln"><span>IT Solutions</span></span><span class="ln"><span>Built to</span></span><span class="ln"><span>Perfection.</span></span></h1>
+<p class="hero-p">Let’s Come Up With a Custom Plan Just for You. Find Out Why PM IT Solutions is the Name of the Solution.</p>
+<div class="cta"><a class="btn p mg" href="#services">Explore Our Solutions <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g mg" href="#contact">Talk to Our Team</a></div></div>
+<div class="vis" role="img" aria-label="Abstract network of connected technology nodes" data-px="-.04"><canvas id="cv"></canvas><div class="ring"></div><div class="ring r2"></div><div class="core"></div>
+<div class="fc"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.600-1A4.500 4.500 0 0 1 17 18z"/></svg>Cloud</div>
+<div class="fc"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M8 8h8v8H8zM4 10h2M4 14h2M18 10h2M18 14h2M10 4v2M14 4v2M10 18v2M14 18v2"/></svg>AI &amp; ML</div>
+<div class="fc"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 20a6 6 0 0 1 12 0M17 8a3 3 0 0 1 0 6M21 20a5 5 0 0 0-4-5"/></svg>Talent</div>
+<div class="fc"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>Software</div></div></div></section>
+
+<section id="about" data-bg="1"><div class="big" data-px=".12" aria-hidden="true">360°</div>
+<div class="wrap ig"><h2 class="rv" data-split>Technology. Talent. Transformation.</h2>
+<div><p class="rv">PM IT Solutions LLC is a technology and IT staffing and consulting company based in Lansing, Michigan. We connect exceptional IT talent with forward-thinking companies.</p><p class="rv" style="--d:.15s">From software development and cloud services to consulting and training, we build custom plans around your business needs, with quality, trust and long-term partnership at the centre.</p></div></div></section>
+
+<section id="tech" class="hs" style="padding:0" data-bg="0"><div class="pin"><div class="wrap tk">
+<div class="th"><h2 class="rv" data-split>Our Technologies</h2><p>Twelve areas of expertise. Hover, focus or tap a card to see more.</p></div>
+<div class="track" id="trk"></div></div></div></section>
+
+<section id="services" data-bg="1"><div class="wrap"><div class="sh"><h2 class="rv" data-split>Our Services</h2><p class="rv">Technology solutions designed around your business needs.</p></div><div class="sv" id="sv"></div></div></section>
+
+<section id="why" data-bg="0"><div class="wrap"><h2 class="rv" data-split>Why Choose PM IT Solutions?</h2>
+<p class="lead rv">We deliver innovative IT solutions with a strong focus on quality, trust, and long-term partnerships.</p>
+<div class="pl">
+<article class="pn rv"><h3>Our Mission</h3><p>At PM IT Solutions LLC our mission is to connect exceptional IT talent with forward-thinking companies. We are committed to delivering reliable, efficient, and people-focused recruitment solutions that help businesses grow and professionals build meaningful careers.</p></article>
+<article class="pn rv" style="--d:.1s"><h3>Our Vision</h3><p>Our vision is to become a trusted leader in IT recruitment by transforming the hiring experience through technology, transparency, and strong human relationships.</p></article>
+<article class="pn rv" style="--d:.2s"><h3>Our Goal</h3><p>Our goal is to bridge the gap between skilled IT professionals and companies seeking top technology talent.</p></article></div></div></section>
+
+<section id="process" data-bg="1"><div class="wrap"><h2 class="rv" data-split>How We Create Impact</h2>
+<div class="st" id="st"><div class="ln0"></div><div class="lf" id="lf"></div></div></div></section>
+
+<section id="stats" data-bg="0"><div class="wrap sg">
+<div class="rv"><b><span data-n="12">12</span>+</b><span>Technology Areas</span></div>
+<div class="rv" style="--d:.1s"><b><span data-n="5">5</span></b><span>Core Services</span></div>
+<div class="rv" style="--d:.2s"><b>360°</b><span>Technology &amp; Talent Solutions</span></div></div></section>
+
+<section id="cta"><div class="grid"></div><div class="wrap"><h2 class="rv" data-split>Let’s Create the Next Big Thing Together.</h2><p class="rv">Contact Us! We are more than happy to reach out.</p><a class="btn p mg" href="#contact">Start a Conversation <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
+
+<section id="contact" data-bg="0"><div class="wrap cg"><div>
+<h2 class="rv" data-split>Get in touch</h2>
+<div class="ci rv"><div><h3>Office Address</h3><address style="font-style:normal">PM IT SOLUTIONS LLC<br>120 North Washington Square<br>Suite 300, Office #324<br>Lansing, MI 48933</address></div>
+<div><h3>Email</h3><a href="mailto:hr@pmitsol.com">hr@pmitsol.com</a></div>
+<div><h3>Support</h3><a href="tel:+15175004255">(517) 500-4255</a></div></div></div>
+<form id="fm" class="rv" novalidate>
+<div class="f"><input id="n" name="n" placeholder=" " required autocomplete="name"><label for="n">Your Name</label></div>
+<div class="f"><input id="e" name="e" type="email" placeholder=" " required autocomplete="email"><label for="e">Your Email</label></div>
+<div class="f"><input id="s" name="s" placeholder=" "><label for="s">Subject</label></div>
+<div class="f"><textarea id="m" name="m" placeholder=" " required></textarea><label for="m">Message</label></div>
+<button class="btn p mg" type="submit">Send Message <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><div id="ok" role="status" aria-live="polite"></div></form></div></section>
+</main>
+
+<footer><div class="wrap"><div class="fg">
+<div><a class="logo" href="#home"><i>PM</i>PM IT SOLUTIONS LLC</a><p style="margin-top:16px;max-width:34ch">Technology, IT consulting and staffing solutions built around your business.</p></div>
+<div><h4>Navigation</h4><ul><li><a href="#home">Home</a></li><li><a href="#tech">Technologies</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div><h4>Contact</h4><ul><li><a href="mailto:hr@pmitsol.com">hr@pmitsol.com</a></li><li><a href="tel:+15175004255">(517) 500-4255</a></li></ul></div>
+<div><h4>Location</h4><ul><li>Lansing, Michigan</li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms &amp; Conditions</a></li></ul></div></div>
+<div class="cp"><p>© PM-IT SOLUTIONS 2026 | All Rights Reserved.</p></div></div></footer>
+
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+var RM=matchMedia('(prefers-reduced-motion:reduce)').matches,FINE=matchMedia('(hover:hover) and (pointer:fine)').matches;
+var I={ui:"M4 5h16v11H4zM8 20h8M12 16v4",dev:"M7 8a4 4 0 1 0 0 8c4 0 6-8 10-8a4 4 0 1 1 0 8c-4 0-6-8-10-8",ora:"M5 6c0-2 14-2 14 0v12c0 2-14 2-14 0zM5 12c0 2 14 2 14 0",big:"M5 20V10M10 20V4M15 20v-8M20 20V8",az:"M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1A4.500 4.500 0 0 1 17 18z",net:"M8 7l-5 5 5 5M16 7l5 5-5 5",sf:"M12 3l2.500 6H21l-5 4 2 7-6-4-6 4 2-7-5-4h6.500z",app:"M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM11 18h2",ter:"M12 3l9 5-9 5-9-5zM3 13l9 5 9-5",ai:"M8 8h8v8H8zM4 10h2M4 14h2M18 10h2M18 14h2M10 4v2M14 4v2M10 18v2M14 18v2",qa:"M5 12l4 4 10-10",pm:"M4 6h16M4 12h10M4 18h6",chat:"M4 5h16v11H9l-5 4z",ppl:"M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 20a6 6 0 0 1 12 0M17 8a3 3 0 0 1 0 6M21 20a5 5 0 0 0-4-5",cap:"M2 9l10-5 10 5-10 5zM6 12v5c3 2 9 2 12 0v-5",eye:"M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",map:"M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14",bld:"M14 7l3-3 3 3-3 3zM3 21l11-11",up:"M4 16l5-5 4 4 7-8M15 7h5v5"};
+var ic=function(k){return '<svg width="24" height="24" viewBox="0 0 24 24"><path d="'+I[k]+'"/></svg>'};
+var T=[["UI / UX","ui","Research-led interfaces and design systems.","Wireframes, prototypes, usability testing.",1],["DevOps","dev","Automated pipelines and reliable releases.","CI/CD, monitoring, infrastructure as code."],["Oracle","ora","Enterprise database and application expertise.","Administration, migration, tuning."],["Big Data","big","Pipelines that turn volume into insight.","Ingestion, processing, analytics."],["Microsoft Azure","az","Cloud platform engineering on Azure.","Migration, security, cost control.",1],["\u002ENET","net","Robust applications on the Microsoft stack.","APIs, web apps, enterprise systems."],["Salesforce","sf","CRM configuration and integration.","Customization, automation, support."],["App Development","app","Mobile and web apps people enjoy using.","Native, cross-platform, progressive."],["TeraData","ter","Data warehousing at enterprise scale.","Modeling, ETL, optimization."],["AI & ML","ai","Practical machine learning for business.","Models, automation, intelligent workflows.",1],["QA","qa","Testing that protects every release.","Manual, automated, performance."],["Project Manager","pm","Delivery leadership for technology teams.","Planning, agile delivery, reporting."]];
+$('#trk').innerHTML=T.map(function(t,i){return '<div class="tc'+(t[4]?' lg':'')+' rv" tabindex="0" style="--d:'+(i%4)*.08+'s"><div class="ic">'+ic(t[1])+'</div><div><h3>'+t[0]+'</h3><p>'+t[2]+'</p><p class="x">'+t[3]+'</p></div></div>'}).join('');
+var S=[["Software Development","net","Custom software solutions tailored to your business needs."],["IT Consulting","chat","Expert guidance for your technology decisions."],["Cloud Services","az","Secure and scalable cloud infrastructure solutions."],["IT Staffing","ppl","Providing skilled IT professionals for your business growth."],["Training","cap","Professional training programs to upgrade technical skills."]];
+$('#sv').innerHTML=S.map(function(s,i){return '<article class="sc rv" tabindex="0"><div class="sn">0'+(i+1)+'</div><h3>'+ic(s[1])+s[0]+'</h3><p>'+s[2]+'</p><div class="ar"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></article>'}).join('');
+var P=[["Understand","eye","We listen first: your goals, your team and the gaps to close."],["Strategize","map","A custom plan for technology and talent, with clear priorities."],["Build","bld","Skilled people and solid engineering turn the plan into delivery."],["Grow","up","We stay involved, refining and scaling as your business grows."]];
+$('#st').insertAdjacentHTML('beforeend',P.map(function(p,i){return '<div class="sp"><div class="dot">'+ic(p[1])+'</div><small>Step 0'+(i+1)+'</small><div><h3>'+p[0]+'</h3><p>'+p[2]+'</p></div></div>'}).join(''));
+/* split headings */
+$$('[data-split]').forEach(function(h){var n=0;h.innerHTML=h.textContent.split(' ').map(function(w){return '<span class="w"><span style="--i:'+(n++)+'">'+w+'</span></span>'}).join(' ')});
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+$$('.rv').forEach(function(e){RM?e.classList.add('in'):io.observe(e)});
+/* counters */
+var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);var n=+e.target.dataset.n;if(RM)return;var t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1400);e.target.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.6});
+$$('[data-n]').forEach(function(e){co.observe(e)});
+/* nav active + bg tone */
+var sec=$$('section[id]'),links=$$('.links a.l');
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)});if(e.target.dataset.bg!==undefined)document.body.classList.toggle('alt',e.target.dataset.bg==='1')}})},{rootMargin:'-45% 0px -50% 0px'});
+sec.forEach(function(s){so.observe(s)});
+/* scroll loop */
+var prog=$('#prog'),nav=$('#nav'),hs=$('.hs'),trk=$('#trk'),st=$('#st'),lf=$('#lf'),sps=$$('.sp'),px=$$('[data-px]'),tick=false,vh=innerHeight;
+function hsSize(){if(!hs)return;if(innerWidth>=1024&&!RM){var w=trk.scrollWidth-innerWidth+80;hs.style.setProperty('--hh',(w+vh)+'px');hs._w=w}else{hs.style.removeProperty('--hh');trk.style.transform='';hs._w=0}}
+function upd(){tick=false;var y=scrollY,max=document.documentElement.scrollHeight-vh;prog.style.transform='scaleX('+(max>0?y/max:0)+')';nav.classList.toggle('s',y>30);
+if(hs&&hs._w){var r=hs.getBoundingClientRect(),p=Math.max(0,Math.min(1,-r.top/(r.height-vh)));trk.style.transform='translate3d('+(-p*hs._w)+'px,0,0)'}
+var r2=st.getBoundingClientRect(),q=Math.max(0,Math.min(1,(vh*.75-r2.top)/(r2.height+vh*.1)));var m=innerWidth<768;lf.style.transform=m?'scaleY('+q+')':'scaleX('+q+')';sps.forEach(function(s,i){s.classList.toggle('on',q>(i/sps.length)-.02+.02*i&&q>i*.24)});
+if(!RM)px.forEach(function(e){var r=e.getBoundingClientRect();e.style.transform='translate3d(0,'+((r.top+r.height/2-vh/2)*parseFloat(e.dataset.px))+'px,0)'})}
+function rq(){if(!tick){tick=true;requestAnimationFrame(upd)}}
+addEventListener('scroll',rq,{passive:true});addEventListener('resize',function(){vh=innerHeight;hsSize();rq()});addEventListener('load',function(){hsSize();rq()});hsSize();upd();
+/* mobile drawer */
+var bg=$('#bg'),dr=$('#drawer');function tg(o){dr.classList.toggle('o',o);dr.setAttribute('aria-hidden',!o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+bg.onclick=function(){tg(!dr.classList.contains('o'))};$$('#drawer a').forEach(function(a){a.onclick=function(){tg(false)}});addEventListener('keydown',function(e){if(e.key==='Escape')tg(false)});
+/* desktop only: cursor, magnetic, card glow */
+if(FINE&&!RM){var cur=$('#cur'),cx=0,cy=0,tx=0,ty=0;addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;cur.style.opacity=1},{passive:true});
+(function l(){cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;cur.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(l)})();
+document.addEventListener('mouseover',function(e){cur.classList.toggle('h',!!e.target.closest('a,button,.tc,.sc,.pn'))});
+$$('.mg').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+(e.clientX-r.left-r.width/2)*.2+'px,'+(e.clientY-r.top-r.height/2)*.3+'px)'});b.addEventListener('mouseleave',function(){b.style.transform=''})});
+$$('.tc').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})})}
+/* hero canvas */
+var cv=$('#cv'),g=cv.getContext('2d'),N=[],W,H,vis=true,dpr=Math.min(devicePixelRatio||1,2);
+function rs(){W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;g.setTransform(dpr,0,0,dpr,0,0);N=[];var c=innerWidth<768?26:44;for(var i=0;i<c;i++)N.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
+function dw(){g.clearRect(0,0,W,H);for(var i=0;i<N.length;i++){var a=N[i];if(!RM){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1}
+for(var j=i+1;j<N.length;j++){var b=N[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<110){g.strokeStyle='rgba(80,170,255,'+(.28*(1-d/110))+')';g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke()}}
+g.fillStyle='rgba(120,220,255,.8)';g.beginPath();g.arc(a.x,a.y,1.8,0,7);g.fill()}
+if(vis&&!RM&&!document.hidden)requestAnimationFrame(dw)}
+rs();dw();addEventListener('resize',function(){rs();if(RM)dw()});
+new IntersectionObserver(function(e){var was=vis;vis=e[0].isIntersecting;if(vis&&!was&&!RM)dw()}).observe(cv);
+document.addEventListener('visibilitychange',function(){if(!document.hidden&&vis&&!RM)dw()});
+/* form */
+$('#fm').addEventListener('submit',function(e){e.preventDefault();var f=e.target,ok=$('#ok');
+if(!f.n.value.trim()||!/^\S+@\S+\.\S+$/.test(f.e.value)||!f.m.value.trim()){ok.textContent='Please enter your name, a valid email and a message.';return}
+ok.textContent='Opening your email app to send this message to hr@pmitsol.com.';
+location.href='mailto:hr@pmitsol.com?subject='+encodeURIComponent(f.s.value||'Website enquiry from '+f.n.value)+'&body='+encodeURIComponent(f.m.value+'\n\n'+f.n.value+' ('+f.e.value+')')});
+})();
+</script>
+</body>
+</html>

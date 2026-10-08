@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JobExcello — Practice the interview before it counts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fff;--bg2:#F7F8FA;--tx:#111827;--mu:#667085;--bd:#E5E7EB;--ac:#4F46E5;--acs:#EEF0FF;--ok:#12805C;--oks:#E7F6EF;--wn:#B45309;--wns:#FEF3E2;--sh:0 1px 2px rgba(16,24,40,.05),0 12px 32px rgba(16,24,40,.07);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.w{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{letter-spacing:-.03em;line-height:1.08;font-weight:700}
+h1{font-size:clamp(2.5rem,5.4vw,4.1rem)}
+h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+.mu{color:var(--mu)}
+.eb{font-size:.78rem;font-weight:600;letter-spacing:.12em;color:var(--ac);margin-bottom:16px}
+.sec{padding:96px 0}.alt{background:var(--bg);border-block:1px solid var(--bd)}
+.hd{max-width:620px;margin-bottom:40px}.hd p{margin-top:14px;color:var(--mu);font-size:1.08rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--bd);background:var(--bg);border-radius:12px;padding:11px 18px;font-weight:600;font-size:.95rem;cursor:pointer;text-decoration:none;color:var(--tx);transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--sh)}.btn:active{transform:none}
+.btn.p{background:var(--ac);border-color:var(--ac);color:#fff}.btn.p:hover{filter:brightness(1.08)}
+.btn.lg{padding:15px 24px;font-size:1rem;border-radius:14px}
+.card{background:var(--bg);border:1px solid var(--bd);border-radius:18px;box-shadow:var(--sh)}
+/* nav */
+nav{position:sticky;top:0;z-index:20;padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid transparent;transition:background .2s,border-color .2s,backdrop-filter .2s}
+nav.sc{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--bd)}
+.nv{display:flex;align-items:center;height:68px;gap:32px}
+.logo{font-weight:700;font-size:1.2rem;letter-spacing:-.03em;text-decoration:none;color:var(--tx);display:flex;align-items:center;gap:9px}
+.logo b{width:26px;height:26px;border-radius:8px;background:var(--ac);color:#fff;display:grid;place-items:center;font-size:.85rem}
+.nl{display:flex;gap:26px;flex:1}.nl a{color:var(--mu);text-decoration:none;font-size:.93rem;font-weight:500;transition:color .15s}.nl a:hover{color:var(--tx)}
+.nr{display:flex;align-items:center;gap:16px;margin-left:auto}.nr .lg{color:var(--mu);text-decoration:none;font-weight:500;font-size:.93rem}
+/* hero */
+.hero{padding:56px 0 88px}
+.hg{display:grid;grid-template-columns:1fr 1.08fr;gap:56px;align-items:center}
+.hero p.lead{margin:22px 0 30px;font-size:1.15rem;color:var(--mu);max-width:480px}
+.sm{margin-top:14px;font-size:.88rem;color:var(--mu)}
+/* demo app */
+.app{overflow:hidden}
+.at{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--bd);font-size:.85rem;font-weight:600}
+.at span:last-child{color:var(--mu);font-weight:500}
+.steps{list-style:none;display:flex;padding:12px 18px;gap:6px;border-bottom:1px solid var(--bd);background:var(--bg2);overflow-x:auto}
+.steps li{flex:1;min-width:max-content;font-size:.76rem;font-weight:500;color:var(--mu);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.steps li:before{content:"";width:8px;height:8px;border-radius:50%;border:1.5px solid var(--bd);background:var(--bg);transition:.3s}
+.steps li.on{color:var(--tx)}.steps li.on:before{border-color:var(--ac);background:var(--ac);box-shadow:0 0 0 3px var(--acs)}
+.steps li.done:before{border-color:var(--ok);background:var(--ok)}
+.ab{padding:22px 18px 20px;min-height:340px}
+.q{display:flex;gap:12px;margin-bottom:20px}
+.av{flex:none;width:34px;height:34px;border-radius:10px;background:var(--acs);color:var(--ac);display:grid;place-items:center;font-size:.75rem;font-weight:700}
+.q small{color:var(--mu);font-size:.78rem}.q p{font-weight:600;font-size:1.05rem;line-height:1.4;letter-spacing:-.01em}
+.pn{animation:fi .35s ease}@keyframes fi{from{opacity:0;transform:translateY(6px)}}
+.pn[hidden]{display:none}
+.box{border:1px solid var(--bd);border-radius:14px;padding:18px;background:var(--bg2);text-align:center}
+.mic{width:44px;height:44px;border-radius:50%;background:var(--acs);color:var(--ac);display:grid;place-items:center;margin:0 auto 12px}
+.rd{display:flex;align-items:center;justify-content:center;gap:8px;font-size:.85rem;font-weight:600;margin-bottom:10px}
+.rd:before{content:"";width:9px;height:9px;border-radius:50%;background:#E5484D;animation:pl 1.2s infinite}@keyframes pl{50%{opacity:.25}}
+.wave{display:flex;align-items:center;justify-content:center;gap:3px;height:54px;margin:6px 0 14px}
+.wave i{width:3px;height:100%;border-radius:3px;background:var(--ac);transform:scaleY(.15);animation:wv 1s ease-in-out infinite}@keyframes wv{50%{transform:scaleY(1)}}
+.tt{font-variant-numeric:tabular-nums;font-size:1.5rem;font-weight:600;margin-bottom:14px}
+.sp{width:26px;height:26px;border-radius:50%;border:3px solid var(--bd);border-top-color:var(--ac);margin:30px auto 14px;animation:sn .8s linear infinite}@keyframes sn{to{transform:rotate(1turn)}}
+.sc1{display:flex;align-items:flex-end;gap:10px;margin-bottom:16px}.sc1 b{font-size:3.6rem;line-height:1;letter-spacing:-.04em}.sc1 span{color:var(--mu);padding-bottom:6px}
+.sc1 em{margin-left:auto;font-style:normal;font-size:.8rem;font-weight:600;color:var(--ok);background:var(--oks);padding:4px 10px;border-radius:99px}
+.bars{display:grid;gap:12px}
+.br{display:grid;grid-template-columns:116px 1fr 30px;gap:12px;align-items:center;font-size:.86rem}
+.br b{text-align:right;font-variant-numeric:tabular-nums}
+.bar{height:7px;border-radius:9px;background:var(--bd);overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--ac);border-radius:9px;transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.bar i.lo{background:var(--wn)}
+.fb{margin-top:18px;border:1px solid var(--bd);border-left:3px solid var(--wn);border-radius:12px;padding:12px 14px;font-size:.9rem;opacity:0;transform:translateY(8px);transition:.5s}.fb.in{opacity:1;transform:none}
+.fb small{display:block;color:var(--wn);font-weight:600;margin-bottom:2px}
+.rp{background:none;border:0;color:var(--mu);font-size:.8rem;cursor:pointer;margin-top:12px;text-decoration:underline}
+/* personalize */
+.tabs{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--bd);border-radius:14px;background:var(--bg);flex-wrap:wrap}
+.tabs button{border:0;background:none;padding:9px 16px;border-radius:10px;font-weight:600;font-size:.9rem;color:var(--mu);cursor:pointer;transition:.2s}
+.tabs button:hover{color:var(--tx)}.tabs button[aria-selected=true]{background:var(--tx);color:var(--bg)}
+.lb{margin:30px 0 12px;font-size:.9rem;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips button{border:1px solid var(--bd);background:var(--bg);border-radius:99px;padding:8px 16px;font-size:.9rem;font-weight:500;cursor:pointer;transition:.2s}
+.chips button:hover{border-color:var(--ac)}.chips button[aria-pressed=true]{border-color:var(--ac);background:var(--acs);color:var(--ac)}
+.pv{margin-top:28px;padding:26px;display:flex;gap:16px;align-items:flex-start;max-width:760px}
+.pv h3{font-size:1.35rem;letter-spacing:-.02em;line-height:1.35;font-weight:600}
+.pv .m{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.bd{font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--acs);color:var(--ac)}.bd.g{background:var(--bg2);color:var(--mu);border:1px solid var(--bd)}
+.sw{animation:fi .3s ease}
+.pg{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.pv2{padding:28px}.pvh{display:flex;align-items:center;gap:12px;margin-bottom:18px}.pvh .m{display:flex;gap:8px;flex-wrap:wrap}
+.pv2 h3{font-size:1.5rem;line-height:1.3;letter-spacing:-.02em;font-weight:600;margin-top:4px}
+.pl{list-style:none;counter-reset:n;display:grid;gap:8px;padding:0}
+.pl li{counter-increment:n;display:flex;gap:12px;align-items:flex-start;border:1px solid var(--bd);border-radius:12px;padding:11px 14px;font-size:.92rem}
+.pl li:before{content:counter(n);flex:none;width:22px;height:22px;border-radius:7px;background:var(--acs);color:var(--ac);display:grid;place-items:center;font-size:.76rem;font-weight:600}
+.pl li:first-child{border-color:var(--ac)}
+/* resume+jd */
+.fl{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.up{padding:28px}.up .ic{width:44px;height:44px;border-radius:12px;background:var(--acs);color:var(--ac);display:grid;place-items:center;margin-bottom:18px}
+.up h3{font-size:1.25rem;margin-bottom:8px}.up p{color:var(--mu);margin-bottom:20px;font-size:.95rem}
+.up textarea{width:100%;min-height:96px;border:1px solid var(--bd);border-radius:12px;padding:12px;background:var(--bg2);resize:vertical;margin-bottom:14px;font-size:.9rem}
+.st{margin-top:12px;font-size:.85rem;color:var(--ok);min-height:1.4em}
+.jn{display:flex;flex-direction:column;align-items:center}
+.jn:before{content:"";width:1px;height:28px;background:var(--bd)}
+.out{display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:16px;border:1px solid var(--ac);background:var(--acs);font-weight:600}
+.out small{display:block;font-weight:500;color:var(--mu);font-size:.82rem}
+.eq{font-size:.82rem;color:var(--mu);margin:8px 0}
+/* dashboard */
+.dash{overflow:hidden}
+.dt{display:flex;gap:4px;padding:10px 14px;border-bottom:1px solid var(--bd);background:var(--bg2);overflow-x:auto}
+.dt button{border:0;background:none;padding:8px 16px;border-radius:9px;font-weight:600;font-size:.9rem;color:var(--mu);cursor:pointer;white-space:nowrap}
+.dt button[aria-selected=true]{background:var(--bg);color:var(--tx);box-shadow:0 1px 2px rgba(16,24,40,.12)}
+.dp{padding:30px}
+.ch{max-width:640px;display:grid;gap:14px}
+.bu{padding:14px 16px;border-radius:14px;border:1px solid var(--bd);font-size:.95rem}.bu small{display:block;color:var(--mu);font-weight:600;font-size:.76rem;margin-bottom:4px}
+.bu.a{background:var(--bg2);margin-left:36px}
+.sg{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:start}
+.big{font-size:5rem;font-weight:700;letter-spacing:-.05em;line-height:1}.big span{font-size:1.2rem;color:var(--mu);letter-spacing:0;font-weight:500}
+.wk{margin-top:18px;border-radius:14px;background:var(--wns);padding:14px 16px;font-size:.92rem}.wk b{color:var(--wn);display:block;margin-bottom:2px}
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch}
+.bx{border:1px solid var(--bd);border-radius:14px;padding:18px;font-size:.93rem}.bx small{display:block;font-weight:600;font-size:.76rem;margin-bottom:8px;color:var(--mu)}
+.bx.n{border-color:var(--ok);background:var(--oks)}.bx.n small{color:var(--ok)}
+.wm{align-self:center;max-width:190px;text-align:center;font-size:.82rem}.wm .bd{display:inline-block;background:var(--wns);color:var(--wn);margin-bottom:8px}.wm div{color:var(--mu)}
+.bx mark{background:none;color:var(--ok);font-weight:600}
+/* proof */
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ph{border:1px dashed var(--bd);border-radius:18px;padding:26px;background:var(--bg)}
+.ph .l{height:9px;border-radius:9px;background:var(--bg2);margin-bottom:10px}.ph p{font-size:.85rem;color:var(--mu);margin-top:16px}
+/* cta */
+.cta{text-align:center;padding:110px 0}.cta h2{max-width:700px;margin:0 auto 16px}.cta p{color:var(--mu);font-size:1.1rem;margin-bottom:28px}
+footer{border-top:1px solid var(--bd);padding:28px 0;font-size:.85rem;color:var(--mu)}footer .w{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(10px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){.hg,.sg,.pg{grid-template-columns:1fr}.hg{gap:40px}.nl{display:none}.sec{padding:72px 0}.tg{grid-template-columns:1fr}.ba{grid-template-columns:1fr}.wm{max-width:none}}
+@media(max-width:640px){.fl{grid-template-columns:1fr}.btn.lg,.hero .btn,.up .btn{width:100%}.nr .lg{display:none}.dp{padding:20px}.br{grid-template-columns:96px 1fr 28px}.big{font-size:4rem}.bu.a{margin-left:0}.pv2{padding:20px}.hero{padding-top:32px}}
+@media(prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.wave i{transform:scaleY(.6)}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="w nv">
+<a class="logo" href="#top"><b>J</b>JobExcello</a>
+<div class="nl"><a href="#how">How It Works</a><a href="#practice">Practice</a><a href="#feedback">AI Feedback</a><a href="#cta">Pricing</a></div>
+<div class="nr"><a class="lg" href="#cta">Log In</a><a class="btn p" href="#cta">Start Free</a></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="w hg">
+<div>
+<div class="eb">AI MOCK INTERVIEW</div>
+<h1>Practice the interview before it counts.</h1>
+<p class="lead">Practice realistic interviews tailored to your role, resume, and target job. Get instant AI feedback and know exactly what to improve before the real interview.</p>
+<a class="btn p lg" href="#cta">Start Free Mock Interview →</a>
+<div class="sm">Free to start · No credit card required</div>
+</div>
+<div class="card app" id="demo" aria-label="Interactive mock interview preview">
+<div class="at"><span>Mock interview · Digital Marketing</span><span>Question 1 of 5</span></div>
+<ol class="steps" id="steps"><li>Question</li><li>Answer</li><li>AI Analysis</li><li>Score</li><li>Feedback</li></ol>
+<div class="ab">
+<div class="q"><div class="av">AI</div><div><small>Interviewer</small><p>Tell me about a campaign that underperformed. What did you change?</p></div></div>
+<div class="pn" id="idle"><div class="box"><div class="mic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><p class="mu" style="margin-bottom:14px;font-size:.9rem">Answer out loud, like it's the real thing.</p><button class="btn p" id="go">Start answering</button></div></div>
+<div class="pn" id="rec" hidden><div class="box"><div class="rd">Recording</div><div class="wave" id="wave" aria-hidden="true"></div><div class="tt" id="tt">0:00</div><button class="btn p" id="stop">Stop &amp; submit</button></div></div>
+<div class="pn" id="ana" hidden><div class="box"><div class="sp"></div><b>Analyzing your answer</b><p class="mu" style="font-size:.88rem">Checking clarity, relevance and detail</p></div></div>
+<div class="pn" id="res" hidden>
+<div class="sc1"><b id="sc">0</b><span>/ 100</span><em>AI Analysis</em></div>
+<div class="bars">
+<div class="br"><span>Communication</span><div class="bar"><i data-v="84"></i></div><b>84</b></div>
+<div class="br"><span>Relevance</span><div class="bar"><i data-v="79"></i></div><b>79</b></div>
+<div class="br"><span>Specificity</span><div class="bar"><i class="lo" data-v="65"></i></div><b>65</b></div>
+</div>
+<div class="fb" id="fb"><small>Feedback</small>Good explanation. Add a measurable result to make your answer stronger.</div>
+<button class="rp" id="rp">Replay demo</button>
+</div>
+</div></div>
+</div></header>
+
+<section class="sec alt" id="practice"><div class="w">
+<div class="hd rv"><h2>Make your practice feel like the real interview.</h2><p>Choose the type of interview and role you're preparing for. JobExcello adapts the questions to match.</p></div>
+<div class="pg rv">
+<div>
+<div class="lb" style="margin-top:0">Interview type</div>
+<div class="tabs" role="tablist" aria-label="Interview type" id="types"></div>
+<div class="lb">Choose your role</div>
+<div class="chips" id="roles"></div>
+<p class="mu" style="margin-top:24px;font-size:.92rem;max-width:380px">Questions change with your role. Add your resume or a job description in the next step to make them specific to you.</p>
+</div>
+<div class="card pv2">
+<div class="pvh"><div class="av">AI</div><div class="m"><span class="bd" id="pt"></span><span class="bd g" id="pr"></span></div></div>
+<div id="pv" class="sw">
+<small class="mu">Featured question</small>
+<h3 id="pq"></h3>
+<div class="lb" style="margin:22px 0 8px">What it assesses</div>
+<div class="chips" id="pa"></div>
+<div class="lb" style="margin:22px 0 8px">Sample interview plan</div>
+<ol class="pl" id="pl"></ol>
+</div></div>
+</div></div></section>
+
+<section class="sec" id="how"><div class="w">
+<div class="hd rv"><h2>Your interview shouldn't be generic.</h2><p>Practice questions based on your actual experience and the job you're applying for.</p></div>
+<div class="fl rv">
+<div class="card up"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M12 17v-6m-3 3 3-3 3 3"/></svg></div><h3>Practice from your Resume</h3><p>Upload your resume and get questions based on your experience, projects, skills, and achievements.</p><input type="file" id="rf" accept=".pdf,.doc,.docx" hidden><button class="btn" id="rb">Upload Resume</button><div class="st" id="rs" aria-live="polite"></div></div>
+<div class="card up"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></div><h3>Practice for a Job</h3><p>Paste a job description and practice questions tailored to the actual role.</p><textarea id="jt" placeholder="Paste the job description here" hidden aria-label="Job description"></textarea><button class="btn" id="jb">Paste Job Description</button><div class="st" id="js" aria-live="polite"></div></div>
+</div>
+<div class="jn rv"><div class="eq">Resume + Job Description</div><div class="out"><div class="av">→</div><div>Personalized Mock Interview<small id="os">Add a resume, a job description, or both</small></div></div></div>
+</div></section>
+
+<section class="sec alt" id="feedback"><div class="w">
+<div class="hd rv"><h2>Know exactly what to improve.</h2><p>Turn every practice interview into a better answer.</p></div>
+<div class="card dash rv">
+<div class="dt" role="tablist" id="dtabs"><button role="tab" aria-selected="false">Your Interview</button><button role="tab" aria-selected="true">Your Score</button><button role="tab" aria-selected="false">Improve Your Answer</button></div>
+<div class="dp pn" id="d0" hidden><div class="ch">
+<div class="bu"><small>Interviewer</small>Tell me about a campaign that underperformed. What did you change?</div>
+<div class="bu a"><small>Your answer · 0:48</small>Our spring campaign had a low click-through rate, so I rewrote the ad copy and tested a few new audiences. After the changes, performance got better and we kept running it for the rest of the quarter.</div>
+</div></div>
+<div class="dp pn" id="d1"><div class="sg">
+<div><div class="big"><span id="ds">0</span><span> / 100</span></div><div class="wk"><b>Specificity needs improvement</b>Your answer explains what you changed, but doesn't show the measurable impact.</div></div>
+<div class="bars" id="db">
+<div class="br"><span>Communication</span><div class="bar"><i data-v="84"></i></div><b>84</b></div>
+<div class="br"><span>Relevance</span><div class="bar"><i data-v="79"></i></div><b>79</b></div>
+<div class="br"><span>Specificity</span><div class="bar"><i class="lo" data-v="65"></i></div><b>65</b></div>
+<div class="br"><span>Confidence</span><div class="bar"><i data-v="82"></i></div><b>82</b></div>
+<div class="br"><span>Structure</span><div class="bar"><i data-v="76"></i></div><b>76</b></div>
+</div></div></div>
+<div class="dp pn" id="d2" hidden><div class="ba">
+<div class="bx"><small>Your Answer</small>Our spring campaign had a low click-through rate, so I rewrote the ad copy and tested a few new audiences. After the changes, performance got better.</div>
+<div class="wm"><span class="bd">AI identifies weakness</span><div>No measurable result to show the impact</div></div>
+<div class="bx n"><small>Better Answer</small>Our spring campaign's click-through rate was 0.9%, well below our 2% target. I rewrote the ad copy around one offer and tested three audiences. In three weeks, <mark>click-through rose to 2.4%</mark> and <mark>cost per lead fell 28%</mark>.</div>
+</div><p class="mu" style="margin-top:16px;font-size:.82rem">Sample answer shown for illustration.</p></div>
+</div></div></section>
+
+<section class="sec"><div class="w">
+<div class="hd rv"><h2>Built for better interview preparation</h2></div>
+<div class="tg rv">
+<div class="ph"><div class="l" style="width:92%"></div><div class="l" style="width:78%"></div><div class="l" style="width:40%"></div><p>Testimonial placeholder: add a verified quote, name and role.</p></div>
+<div class="ph"><div class="l" style="width:88%"></div><div class="l" style="width:70%"></div><div class="l" style="width:46%"></div><p>Testimonial placeholder: add a verified quote, name and role.</p></div>
+<div class="ph"><div class="l" style="width:34%;height:22px"></div><div class="l" style="width:60%"></div><p>Metric placeholder: add a verified number and its source.</p></div>
+</div></div></section>
+
+<section class="sec alt cta" id="cta"><div class="w rv">
+<h2>Your next interview shouldn't be your practice session.</h2>
+<p>Practice with JobExcello before it counts.</p>
+<a class="btn p lg" href="#top">Start My Free Mock Interview →</a>
+<div class="sm">Free to start · No credit card required</div>
+</div></section>
+<footer><div class="w"><span>© JobExcello</span><span>Privacy · Terms · Contact</span></div></footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>8),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+$$('.rv').forEach(el=>io.observe(el));
+function count(el,to,ms=1100){if(rm){el.textContent=to;return}const s=performance.now(),f=t=>{const p=Math.min(1,(t-s)/ms);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+function bars(root){$$('.bar i',root).forEach(i=>{i.style.width='0';requestAnimationFrame(()=>requestAnimationFrame(()=>i.style.width=i.dataset.v+'%'))})}
+
+/* hero demo */
+const wave=$('#wave');for(let i=0;i<34;i++){const b=document.createElement('i');b.style.animationDuration=(.6+Math.random()*.9)+'s';b.style.animationDelay=(-Math.random())+'s';b.style.maxHeight=(35+Math.random()*65)+'%';wave.appendChild(b)}
+const steps=$$('#steps li'),P={idle:$('#idle'),rec:$('#rec'),ana:$('#ana'),res:$('#res')},D={t:0,iv:null,to:[]};
+const step=n=>steps.forEach((li,i)=>{li.classList.toggle('on',i===n);li.classList.toggle('done',i<n)});
+const show=k=>Object.entries(P).forEach(([n,el])=>el.hidden=n!==k);
+const clr=()=>{D.to.forEach(clearTimeout);clearInterval(D.iv)};
+function start(){clr();step(1);show('rec');D.t=0;$('#tt').textContent='0:00';D.iv=setInterval(()=>{D.t++;$('#tt').textContent='0:'+String(D.t).padStart(2,'0');if(D.t>=9)submit()},1000)}
+function submit(){clr();step(2);show('ana');D.to.push(setTimeout(result,1500))}
+function result(){step(3);show('res');$('#fb').classList.remove('in');count($('#sc'),78);bars(P.res);D.to.push(setTimeout(()=>{step(4);$('#fb').classList.add('in')},1400))}
+$('#go').onclick=start;$('#stop').onclick=submit;$('#rp').onclick=start;
+step(0);show('idle');D.to.push(setTimeout(start,2400));
+
+/* role + type */
+const T={'Technical':['Problem solving','Depth of knowledge','Clear reasoning'],'HR / Behavioral':['Communication','Past behavior','Culture fit'],'Managerial':['Leadership','Prioritization','Decision-making'],'Case':['Structured thinking','Trade-offs','Quantitative sense']};
+const X={'Software Developer':['Walk me through a system you designed and the trade-offs you made.','Tell me about a time you disagreed with a teammate on a technical approach.','How do you decide what to test before shipping?'],'Digital Marketing':['Which metrics do you check first when judging a campaign?','How would you split a limited budget across three channels?','Describe a time you used data to change a strategy.'],'Sales':['How do you qualify a lead in the first call?','Walk me through how you handle a price objection.','How do you keep a stalled deal moving?'],'Product':['Tell me about a product decision you made with incomplete data.','How do you say no to a stakeholder?','Which metric would you use to judge a new feature?'],'Data Analyst':['How do you check data quality before analysis?','Explain a complex finding to a non-technical stakeholder.','Which chart would you use to show a trend across segments, and why?'],'Project Manager':['How do you handle a stakeholder who keeps changing scope?','Tell me about a risk you spotted early.','How do you keep a remote team aligned?']};
+const Q={'Software Developer':'How would you debug a production issue that only occurs intermittently?','Digital Marketing':'Tell me about a campaign that underperformed. What did you change?','Sales':'Tell me about a deal you lost and what you learned from it.','Product':'How would you prioritize features when customer requests exceed engineering capacity?','Data Analyst':'A key metric dropped 15% overnight. How would you find out why?','Project Manager':'Your project is two weeks behind and the deadline can\u2019t move. What do you do?'};
+let ty='Technical',ro='Software Developer';
+function mk(box,list,pressed,fn){list.forEach(n=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>{fn(n);$$('button',box).forEach(x=>x.setAttribute(pressed,String(x===b)))};b.setAttribute(pressed,String(n===(pressed==='aria-selected'?ty:ro)));if(pressed==='aria-selected')b.setAttribute('role','tab');box.appendChild(b)})}
+function render(){const p=$('#pv');p.classList.remove('sw');void p.offsetWidth;p.classList.add('sw');$('#pt').textContent=ty;$('#pr').textContent=ro;$('#pq').textContent='\u201C'+Q[ro]+'\u201D';$('#pa').innerHTML=T[ty].map(x=>'<span class="bd g">'+x+'</span>').join('');$('#pl').innerHTML=[Q[ro],...X[ro]].map(q=>'<li>'+q+'</li>').join('')}
+mk($('#types'),Object.keys(T),'aria-selected',n=>{ty=n;render()});mk($('#roles'),Object.keys(Q),'aria-pressed',n=>{ro=n;render()});render();
+
+/* resume + JD */
+const os=()=>{const a=$('#rs').textContent,b=$('#js').textContent;$('#os').textContent=a&&b?'Ready: questions from your resume and the role':a?'Questions based on your resume':b?'Questions tailored to the role':'Add a resume, a job description, or both'};
+$('#rb').onclick=()=>$('#rf').click();
+$('#rf').onchange=e=>{const f=e.target.files[0];$('#rs').textContent=f?'\u2713 '+f.name:'';os()};
+$('#jb').onclick=()=>{const t=$('#jt');t.hidden=false;t.focus()};
+$('#jt').oninput=e=>{$('#js').textContent=e.target.value.trim().length>20?'\u2713 Job description added':'';os()};
+
+/* dashboard */
+const dts=$$('#dtabs button'),dps=['d0','d1','d2'].map(id=>$('#'+id));
+function dtab(i){dts.forEach((b,j)=>b.setAttribute('aria-selected',String(i===j)));dps.forEach((p,j)=>p.hidden=i!==j);if(i===1){count($('#ds'),78);bars($('#db'))}}
+dts.forEach((b,i)=>b.onclick=()=>dtab(i));
+const dio=new IntersectionObserver(es=>{if(es[0].isIntersecting){dtab(1);dio.disconnect()}},{threshold:.3});dio.observe($('#d1'));
+</script>
+</body>
+</html>

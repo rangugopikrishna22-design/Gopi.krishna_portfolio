@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get Your Resume Score — ResumeIQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,560;9..144,650&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F6FA;--card:#FFFFFF;--primary:#4F46E5;--primary-dark:#3730A3;--primary-soft:#EEF0FF;
+    --text-dark:#1A1A2E;--text-muted:#6B7280;--border:#EDEEF5;
+    --success:#16A34A;--success-soft:#E8F7EE;--amber:#D97706;--amber-soft:#FEF3E2;
+    --teal:#0D9488;--teal-soft:#E4F5F3;--rose:#E11D48;--rose-soft:#FDE7EC;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Manrope',-apple-system,sans-serif;background:var(--bg);color:var(--text-dark);}
+  .serif{font-family:'Fraunces',serif;}
+
+  /* topbar */
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:#fff;border-bottom:1px solid var(--border);}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand .mark{width:34px;height:34px;border-radius:10px;background:var(--primary);display:flex;align-items:center;justify-content:center;}
+  .brand .mark svg{width:18px;height:18px;stroke:#fff;}
+  .brand b{font-size:16.5px;font-weight:800;letter-spacing:-0.01em;}
+  .brand b span{color:var(--primary);}
+  .nav-links{display:flex;gap:34px;}
+  .nav-links a{font-size:13.5px;font-weight:600;color:var(--text-muted);text-decoration:none;}
+  .nav-links a:hover{color:var(--text-dark);}
+  .nav-actions{display:flex;align-items:center;gap:12px;}
+  .ghost-nav-btn{border:1px solid var(--border);background:#fff;color:var(--text-dark);font-size:13px;font-weight:700;padding:10px 18px;border-radius:10px;cursor:pointer;}
+  .primary-btn{border:none;background:var(--primary);color:#fff;font-size:13px;font-weight:700;padding:11px 20px;border-radius:10px;cursor:pointer;}
+
+  /* hero band */
+  .hero-band{background:var(--primary-soft);padding:56px 48px 64px;}
+  .hero-grid{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;background:var(--success-soft);color:var(--success);padding:6px 13px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.03em;}
+  .hero-left h1{margin:0 0 12px;font-size:38px;font-weight:560;line-height:1.15;}
+  .hero-left p.sub{margin:0 0 30px;font-size:15px;color:var(--text-muted);line-height:1.6;max-width:420px;}
+
+  .dropzone{border:2px dashed #C7C9F2;background:#fff;border-radius:18px;padding:38px 24px;text-align:center;}
+  .dropzone .cloud{width:52px;height:52px;border-radius:14px;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+  .dropzone .cloud svg{width:24px;height:24px;stroke:var(--primary);}
+  .dropzone h4{margin:0 0 6px;font-size:14.5px;font-weight:700;}
+  .dropzone p{margin:0;font-size:12.5px;color:var(--text-muted);}
+
+  .assess-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:18px;}
+  .assess-row p{margin:0;font-size:11.5px;color:var(--text-muted);line-height:1.5;max-width:260px;}
+  .assess-btn{border:none;background:var(--primary);color:#fff;font-size:14px;font-weight:700;padding:13px 26px;border-radius:12px;cursor:pointer;white-space:nowrap;flex-shrink:0;}
+  .assess-btn:hover{background:var(--primary-dark);}
+
+  /* what you get card */
+  .get-card{background:#fff;border-radius:20px;border:1px solid var(--border);padding:8px 30px;box-shadow:0 20px 40px rgba(30,25,90,0.08);}
+  .get-card h3{margin:0;padding:22px 0 18px;font-size:20px;font-weight:560;border-bottom:1px solid var(--border);}
+  .get-row{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid var(--border);}
+  .get-row:last-child{border-bottom:none;}
+  .get-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .get-icon svg{width:19px;height:19px;}
+  .get-icon.c1{background:var(--primary-soft);}.get-icon.c1 svg{stroke:var(--primary);}
+  .get-icon.c2{background:var(--teal-soft);}.get-icon.c2 svg{stroke:var(--teal);}
+  .get-icon.c3{background:var(--amber-soft);}.get-icon.c3 svg{stroke:var(--amber);}
+  .get-icon.c4{background:var(--rose-soft);}.get-icon.c4 svg{stroke:var(--rose);}
+  .get-icon.c5{background:var(--success-soft);}.get-icon.c5 svg{stroke:var(--success);}
+  .get-text h4{margin:0 0 4px;font-size:14.5px;font-weight:700;}
+  .get-text p{margin:0;font-size:12.5px;color:var(--text-muted);line-height:1.5;}
+
+  /* why section */
+  .why-section{max-width:1220px;margin:0 auto;padding:64px 48px 80px;}
+  .why-section h2{margin:0 0 28px;font-size:26px;font-weight:560;}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .why-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px;}
+  .why-bar{width:32px;height:4px;border-radius:4px;margin-bottom:14px;}
+  .why-bar.b1{background:var(--primary);}.why-bar.b2{background:var(--teal);}.why-bar.b3{background:var(--amber);}.why-bar.b4{background:var(--rose);}
+  .why-card h4{margin:0 0 8px;font-size:15px;font-weight:700;}
+  .why-card p{margin:0;font-size:12.5px;color:var(--text-muted);line-height:1.55;}
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M9 13l2 2 4-4"/></svg></div>
+      <b>Resume<span>IQ</span></b>
+    </div>
+    <div class="nav-links">
+      <a href="#">Resources</a>
+      <a href="#">Pricing</a>
+      <a href="#">Blogs</a>
+      <a href="#">Support</a>
+    </div>
+    <div class="nav-actions">
+      <button class="ghost-nav-btn">Log in</button>
+      <button class="primary-btn">Get started</button>
+    </div>
+  </div>
+
+  <div class="hero-band">
+    <div class="hero-grid">
+
+      <div class="hero-left">
+        <span class="badge">Free to start</span>
+        <h1 class="serif">Get your resume score</h1>
+        <p class="sub">Upload your resume for an AI-powered review with clear, actionable suggestions — in under two minutes.</p>
+
+        <div class="dropzone">
+          <div class="cloud"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-1-7.9A5 5 0 0 1 16 8a4.5 4.5 0 0 1 1 8.9"/><path d="M12 12v7m0-7 3 3m-3-3-3 3"/></svg></div>
+          <h4>Drop your resume here, or choose a file</h4>
+          <p>Supports PDF and DOCX · Max size 2MB</p>
+        </div>
+
+        <div class="assess-row">
+          <p>Currently free to run — charges apply for advanced features. See plans for details.</p>
+          <button class="assess-btn">Assess now</button>
+        </div>
+      </div>
+
+      <div class="get-card">
+        <h3 class="serif">What you'll get</h3>
+        <div class="get-row">
+          <div class="get-icon c1"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.3l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9L12 3Z"/></svg></div>
+          <div class="get-text"><h4>Overall resume score</h4><p>See how your resume performs out of 100, across every key parameter.</p></div>
+        </div>
+        <div class="get-row">
+          <div class="get-icon c2"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></div>
+          <div class="get-text"><h4>Key parameter analysis</h4><p>A section-by-section breakdown — skills, experience, formatting, and more.</p></div>
+        </div>
+        <div class="get-row">
+          <div class="get-icon c3"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+          <div class="get-text"><h4>Strengths &amp; weaknesses</h4><p>Understand what's working well and exactly what needs improvement.</p></div>
+        </div>
+        <div class="get-row">
+          <div class="get-icon c4"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 2Z"/></svg></div>
+          <div class="get-text"><h4>Actionable suggestions</h4><p>Get AI-powered recommendations that improve your score instantly.</p></div>
+        </div>
+        <div class="get-row">
+          <div class="get-icon c5"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3Z"/><path d="M9.5 12l1.8 1.8L14.5 10"/></svg></div>
+          <div class="get-text"><h4>ATS compatibility check</h4><p>See how well your resume passes Applicant Tracking Systems.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="why-section">
+    <h2 class="serif">Why users love us</h2>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-bar b1"></div><h4>AI-powered analysis</h4><p>Insights powered by advanced language models, not simple keyword matching.</p></div>
+      <div class="why-card"><div class="why-bar b2"></div><h4>Winning insights</h4><p>Suggestions written to help your resume actually get noticed by recruiters.</p></div>
+      <div class="why-card"><div class="why-bar b3"></div><h4>Quick &amp; easy</h4><p>Upload your resume and get a full report back in under two minutes.</p></div>
+      <div class="why-card"><div class="why-bar b4"></div><h4>Confidential</h4><p>Your resume and data stay private — never sold or shared with third parties.</p></div>
+    </div>
+  </div>
+
+</body>
+</html>
